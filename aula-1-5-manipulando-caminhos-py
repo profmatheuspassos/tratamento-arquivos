@@ -34,7 +34,6 @@ print(Path(__file__).parent / "primeiraPasta")
 print((Path(__file__).parent / "primeiraPasta").exists())
 
 # Trabalhando com partes de caminho
-os.system("clear")
 print("Exercício final")
 caminhoArquivo = Path(__file__)
 print(Path(__file__))
