@@ -1,0 +1,56 @@
+from pathlib import Path
+import os
+
+os.system("clear")
+
+# Retornando caminho do diretório de trabalho atual
+print(Path.cwd())
+
+# Esse caminho é absoluto?
+print(Path.cwd().is_absolute())
+
+# Retornando caminho da primeira pasta
+print(Path("primeiraPasta"))
+
+# Esse caminho é absoluto
+print(Path("primeiraPasta").is_absolute())
+
+# Transformando o caminho em absoluto
+# Primeira maneira
+print(Path.cwd() / "primeiraPasta")
+# Verificar se a pasta existe
+print((Path.cwd() / "primeiraPasta").exists())
+# ... Mas e se mudarmos de pasta?
+os.chdir(Path.home())
+print(Path.cwd() / "primeiraPasta")
+print((Path.cwd() / "primeiraPasta").exists())
+
+# Garantindo que estamos retornando o caminho para a pasta do script
+print(__file__)
+print(Path(__file__).is_absolute())
+print(Path(__file__).parent)
+
+print(Path(__file__).parent / "primeiraPasta")
+print((Path(__file__).parent / "primeiraPasta").exists())
+
+# Trabalhando com partes de caminho
+os.system("clear")
+print("Exercício final")
+caminhoArquivo = Path(__file__)
+print(Path(__file__))
+print(caminhoArquivo)
+print(caminhoArquivo.anchor)
+print(caminhoArquivo.parent)
+print(type(caminhoArquivo.parent))
+print(caminhoArquivo.parent.parent)
+print(caminhoArquivo.parent.parent.parent)
+print(caminhoArquivo.name)
+print(caminhoArquivo.stem)
+print(caminhoArquivo.suffix)
+print(caminhoArquivo.drive)
+print(caminhoArquivo.parents[0])
+print(caminhoArquivo.parents[1])
+print(caminhoArquivo.parents[2])
+print(caminhoArquivo.parents[3])
+print("\n")
+print((caminhoArquivo.parent) == caminhoArquivo.parents[0])
